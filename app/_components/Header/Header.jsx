@@ -16,7 +16,7 @@ function Header() {
       path:'/'
     },
     {
-      id:1,
+      id:3,
       name:'Contact us',
       path:'/'
     }
@@ -27,7 +27,7 @@ function Header() {
         <Image src="/logo.svg" alt='logo' width="200" height="80" />
         <ul className='md:flex gap-8 hidden'>
           {menu.map(items => (
-            <Link href={items.path}>
+            <Link key={items.id+1} href={items.path}>
               <li className="hover:text-primary cursor-pointer transition-all ease-in-out">{items.name}</li>
             </Link>
           ))}
