@@ -17,7 +17,6 @@ function Search() {
   useEffect(() => {
     getCategoryList();
   },[])
-  console.log(categories);
   return (
     <div className='mb-10 flex items-center flex-col'>
       <h2 className='font-bold text-4xl tracking-wide mb-4'>Search <span className='text-primary'> Doctors</span></h2>

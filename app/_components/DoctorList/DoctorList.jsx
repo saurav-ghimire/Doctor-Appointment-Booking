@@ -1,0 +1,34 @@
+import Image from "next/image";
+
+
+function DoctorList({DoctorList}) {
+console.log(DoctorList)
+  return ( 
+    <div className='mb-10'>
+      <h2 className='font-bold text-4xl tracking-wide mb-4'>Popular <span className='text-primary'> Doctors</span></h2>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7'>
+        {
+          DoctorList&&DoctorList.map((doctor,index)=>(
+            <div key={index} className='border-[1px] rounded p-3' >
+            <Image src={doctor?.attributes?.Image?.data?.attributes?.url}
+            alt='Doctor'
+            height='500'
+            width='200'
+            className='h-[300px] w-full object-cover rounded-lg'
+             />
+             <div className='mt-3 items-baseline flex flex-col gap-2'>
+                <h2 className='text-[14px] bg-blue-100 p-1 rounded-full px-2 text-primary'>{doctor?.attributes?.category?.data?.attributes?.Name}</h2>
+                <h2 className='font-bold text-xl'>Dr. {doctor?.attributes.Name}</h2>
+                <h2 className='text-primary text-sm'>{doctor?.attributes?.Experience} Years</h2>
+                <h2 className='text-gray-500 text-sm'>{doctor?.attributes?.Address}</h2>
+                <h2 className='p-2 px-3 border-[1px] border-primary text-primary rounded-full  w-full text-center mt-2 cursor-pointer hover:bg-primary hover:text-white transition-all ease-in-out'>Book Now</h2>
+             </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+   );
+}
+
+export default DoctorList;
