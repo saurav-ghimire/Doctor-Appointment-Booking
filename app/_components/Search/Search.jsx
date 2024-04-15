@@ -5,6 +5,7 @@ import { SearchIcon } from "lucide-react";
 import GlobalApi from "@/app/_utils/GlobalApi";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 
 function Search() {
@@ -17,6 +18,8 @@ function Search() {
   useEffect(() => {
     getCategoryList();
   },[])
+
+  
   return (
     <div className='mb-10 flex items-center flex-col'>
       <h2 className='font-bold text-4xl tracking-wide mb-4'>Search <span className='text-primary'> Doctors</span></h2>
@@ -30,14 +33,15 @@ function Search() {
       <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-5'>
         {categories.length>0 ? categories.map((data,index) => (
           
-          <div key={index} className='flex flex-col items-center text-center gap-2 rounded-lg p-5 bg-blue-50 hover:scale-105 transition-all ease-in-out cursor-pointer'>
+          <Link href={'/search/'+data.attributes.Name} key={data.id} className='flex flex-col items-center text-center gap-2 rounded-lg p-5 bg-blue-50 hover:scale-105 transition-all ease-in-out cursor-pointer'>
+            
             <Image src={data?.attributes?.Icon?.data?.attributes?.url}
             width={40}
             height={40}
             alt="icon"
             />
             <label className='text-blue-500'>{data?.attributes?.Name}</label>
-          </div>
+          </Link>
         ))
         :
         [1,2,3,4,5,6].map((items, index) => (

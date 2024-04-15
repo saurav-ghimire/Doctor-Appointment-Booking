@@ -1,11 +1,15 @@
 import Image from "next/image";
 
 
-function DoctorList({DoctorList}) {
-console.log(DoctorList)
+function DoctorList({DoctorList, title}) {
+  
   return ( 
     <div className='mb-10'>
+      {
+        title? <h2 className='font-bold text-4xl tracking-wide mb-4'>{title}</h2> :
       <h2 className='font-bold text-4xl tracking-wide mb-4'>Popular <span className='text-primary'> Doctors</span></h2>
+      }
+      
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7'>
         {
           DoctorList.length>0 ? DoctorList.map((doctor,index)=>(
