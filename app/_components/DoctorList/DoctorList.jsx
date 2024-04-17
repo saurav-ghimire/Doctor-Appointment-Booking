@@ -31,7 +31,7 @@ function DoctorList({DoctorList, title}) {
           ))
           :
           [1,2,3,4,5,6].map((items, index) => (
-            <div className='h-[200px] bg-slate-100 w-full rounded-lg animate-pulse'>
+            <div key={items} className='h-[200px] bg-slate-100 w-full rounded-lg animate-pulse'>
             
             </div>
           ))

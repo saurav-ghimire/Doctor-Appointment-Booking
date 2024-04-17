@@ -1,9 +1,19 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
+import {useKindeBrowserClient} from "@kinde-oss/kinde-auth-nextjs";
+import {LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
+import { useEffect } from "react";
+
 
 function Header() {
+  const {user} = useKindeBrowserClient();
+  useEffect(() => {
+    console.log(user);
+  })
   const menu = [
     {
       id:1,
@@ -33,7 +43,17 @@ function Header() {
           ))}
         </ul>
       </div>
-      <Button>Get Started</Button>
+      {
+
+      }
+      {
+        !user ? <LoginLink><Button>Get Started</Button></LoginLink> : <LogoutLink><Button>Log out</Button></LogoutLink>
+      }
+      
+      
+      
+
+      {/* <RegisterLink postLoginRedirectURL="/welcome">Sign up</RegisterLink> */}
     </div>
    );
 }
