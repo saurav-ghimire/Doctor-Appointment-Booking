@@ -7,6 +7,11 @@ import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 import {useKindeBrowserClient} from "@kinde-oss/kinde-auth-nextjs";
 import {LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
 import { useEffect } from "react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 
 
 function Header() {
@@ -47,7 +52,19 @@ function Header() {
 
       }
       {
-        !user ? <LoginLink><Button>Get Started</Button></LoginLink> : <LogoutLink><Button>Log out</Button></LogoutLink>
+        !user ? <LoginLink><Button>Get Started</Button></LoginLink>
+        : 
+          <Popover>
+            <PopoverTrigger><Image src={user?.picture} width={50} height={50} alt='User' className='rounded-full' /></PopoverTrigger>
+            <PopoverContent className='w-44'>
+              <ul className='flex flex-col gap-2'>
+                <li className='cursor-pointer hover:bg-slate-100 rounded-md p-3'>Profile</li>
+                <li className='cursor-pointer hover:bg-slate-100 rounded-md p-3'>My Booking</li>
+                <li className='cursor-pointer hover:bg-slate-100 rounded-md p-3'><LogoutLink>Logout</LogoutLink></li>
+              </ul>
+              
+            </PopoverContent>
+          </Popover>
       }
       
       
