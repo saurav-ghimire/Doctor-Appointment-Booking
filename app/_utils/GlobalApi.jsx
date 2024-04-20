@@ -17,8 +17,11 @@ const getDoctorList = () => axiosClient.get('/doctor-lists?populate=*');
 
 const getDoctorByCategory = (category) => axiosClient.get('/doctor-lists?filter[categories][Name][$in]='+category+"&populate=*");
 
+const getDoctorByID = (id) => axiosClient.get('/doctor-lists/'+id+'?populate=*');
+
 export default {
   getCategories,
   getDoctorList,
-  getDoctorByCategory
+  getDoctorByCategory,
+  getDoctorByID
 };

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 
 function DoctorList({DoctorList, title}) {
@@ -25,7 +26,7 @@ function DoctorList({DoctorList, title}) {
                 <h2 className='font-bold text-xl'>Dr. {doctor?.attributes.Name}</h2>
                 <h2 className='text-primary text-sm'>{doctor?.attributes?.Experience} Years</h2>
                 <h2 className='text-gray-500 text-sm'>{doctor?.attributes?.Address}</h2>
-                <h2 className='p-2 px-3 border-[1px] border-primary text-primary rounded-full  w-full text-center mt-2 cursor-pointer hover:bg-primary hover:text-white transition-all ease-in-out'>Book Now</h2>
+                <h2 className='p-2 px-3 border-[1px] border-primary text-primary rounded-full  w-full text-center mt-2 cursor-pointer hover:bg-primary hover:text-white transition-all ease-in-out'><Link href={`/details/${doctor?.id}`}>Book Now</Link></h2>
              </div>
             </div>
           ))
