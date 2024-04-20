@@ -1,6 +1,6 @@
 "use client"
-import DoctorDeails from "@/app/_components/DoctorDetails/DoctorDetails";
-import DoctorSuggestion from "@/app/_components/DoctorSuggestion/DoctorSuggestion";
+import DoctorDeails from "@/app/(route)/details/_component/DoctorDetails/DoctorDetails";
+import DoctorSuggestion from "@/app/(route)/details/_component/DoctorSuggestion/DoctorSuggestion";
 import GlobalApi from "@/app/_utils/GlobalApi";
 import { useEffect, useState } from "react";
 

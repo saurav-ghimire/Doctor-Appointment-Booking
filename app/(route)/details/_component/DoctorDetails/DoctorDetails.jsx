@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { GraduationCap, MapPin } from "lucide-react";
 
 import Image from "next/image";
+import BookAppointment from "../BookAppointment/BookAppointmen";
 
 function DoctorDeails({doctor}) {
   const socialMedia = [
@@ -57,7 +57,7 @@ function DoctorDeails({doctor}) {
           }
         </div>
 
-        <Button className='mt-3 rounded-full'>Book Appointment</Button>
+        <BookAppointment />
           
       </div>
       
