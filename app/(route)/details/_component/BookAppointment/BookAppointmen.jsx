@@ -14,11 +14,45 @@ import {
 import { Calendar } from "@/components/ui/calendar"
 import { useState } from 'react';
 import { CalendarDays, Clock } from 'lucide-react';
+import {useKindeBrowserClient} from "@kinde-oss/kinde-auth-nextjs";
+import GlobalApi from '@/app/_utils/GlobalApi';
+import { toast } from "sonner"
 
-function BookAppointment() {
+
+function BookAppointment({doctorDetails}) {
+  const {user} = useKindeBrowserClient();
   const [date, setDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState(null);
   const [note, setNote] = useState('');
+
+  const saveBooking = () => {
+    // Format date to M/D/Y format
+  const formattedDate = date.toLocaleDateString('en-US');
+  
+  // Format time to AM/PM format
+  const formattedTime = selectedTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+  
+    const data ={
+      data:{
+        userName:user?.family_name + " " + user?.given_name,
+        Email:user?.email,
+        Date:formattedDate,
+        Time:formattedTime,
+        Note:note,
+        DoctorID:doctorDetails?.id
+      }
+    }
+    GlobalApi.bookAppointment(data).then(res => {
+     console.log(res);
+     if(res){
+      toast("Booking Confrimation has been sent in your email.");
+     } 
+     setDate(new Date());
+     setSelectedTime(null);
+     setNote('');
+    })
+  }
+  
 
   // Generate time slots from 8 AM to 6 PM with 30-minute intervals
   const generateTimeSlots = () => {
@@ -109,7 +143,9 @@ function BookAppointment() {
                 <Button type="button" variant="secondary">
                   Close
                 </Button>
-                <Button type="button" disabled={!(date && selectedTime)}>
+                <Button type="button" disabled={!(date && selectedTime)}
+                onClick={() => saveBooking()}
+                >
                   Submit
                 </Button>
               </>
