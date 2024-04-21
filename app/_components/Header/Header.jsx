@@ -16,9 +16,7 @@ import {
 
 function Header() {
   const {user} = useKindeBrowserClient();
-  useEffect(() => {
-    console.log(user);
-  })
+
   const menu = [
     {
       id:1,
@@ -59,7 +57,7 @@ function Header() {
             <PopoverContent className='w-44'>
               <ul className='flex flex-col gap-2'>
                 <li className='cursor-pointer hover:bg-slate-100 rounded-md p-3'>Profile</li>
-                <li className='cursor-pointer hover:bg-slate-100 rounded-md p-3'>My Booking</li>
+                <li className='cursor-pointer hover:bg-slate-100 rounded-md p-3'><Link href={'/my-booking'}>My Booking</Link></li>
                 <li className='cursor-pointer hover:bg-slate-100 rounded-md p-3'><LogoutLink>Logout</LogoutLink></li>
               </ul>
               

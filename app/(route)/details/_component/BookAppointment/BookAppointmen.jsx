@@ -23,7 +23,7 @@ function BookAppointment({doctorDetails}) {
   const {user} = useKindeBrowserClient();
   const [date, setDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState(null);
-  const [note, setNote] = useState('');
+  const [note, setNote] = useState();
 
   const saveBooking = () => {
     // Format date to M/D/Y format
@@ -42,9 +42,14 @@ function BookAppointment({doctorDetails}) {
         DoctorID:doctorDetails?.id
       }
     }
+
+    
     GlobalApi.bookAppointment(data).then(res => {
-     console.log(res);
+     console.log('appointment save res', res);
      if(res){
+      GlobalApi.sendEmail(data).then(res => {
+        console.log('Email send res', res)
+      })
       toast("Booking Confrimation has been sent in your email.");
      } 
      setDate(new Date());
