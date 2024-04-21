@@ -39,10 +39,10 @@ function MyBooking() {
         <TabsTrigger value="expired">Expired</TabsTrigger>
       </TabsList>
       <TabsContent value="upcoming">
-        <BookingList bookingList={filterBooking('upcoming')} />
+        <BookingList expired={false} bookingList={filterBooking('upcoming')} updateRecord={getUserBookingList} />
       </TabsContent>
       <TabsContent value="expired">
-      <BookingList bookingList={filterBooking('expired')} />
+      <BookingList expired={true} bookingList={filterBooking('expired')} updateRecord={getUserBookingList} />
       </TabsContent>
     </Tabs>
 
