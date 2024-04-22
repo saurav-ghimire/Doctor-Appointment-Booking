@@ -95,7 +95,7 @@ function BookAppointment({doctorDetails}) {
     <>
       <Dialog>
         <DialogTrigger>
-          <Button className='mt-3 rounded-full'>Book Appointment</Button>
+          <button className='mt-3 rounded-full'>Book Appointment</button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
@@ -145,14 +145,14 @@ function BookAppointment({doctorDetails}) {
           <DialogFooter className="sm:justify-start">
             <DialogClose asChild>
               <>
-                <Button type="button" variant="secondary">
+                <button type="button" variant="secondary">
                   Close
-                </Button>
-                <Button type="button" disabled={!(date && selectedTime)}
+                </button>
+                <button type="button" disabled={!(date && selectedTime)}
                 onClick={() => saveBooking()}
                 >
                   Submit
-                </Button>
+                </button>
               </>
             </DialogClose>
           </DialogFooter>

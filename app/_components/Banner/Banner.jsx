@@ -28,7 +28,7 @@ function Banner() {
             quidem quam repellat.
           </p>
   
-          <Button className='mt-10'>Explore Now</Button>
+          <button className='mt-10'>Explore Now</button>
         </div>
       </div>
     </div>
