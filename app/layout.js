@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={outer.className}>
+      <div className='overflow-hidden'>
       <Header />
         <div className='md:px-20'>
         
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         </div>
         <Footer/>
         <Toaster />
+      </div>
         </body>
     </html>
   );

@@ -23,14 +23,14 @@ function Search() {
   return (
     <div className='mb-10 flex items-center flex-col'>
       <h2 className='font-bold text-4xl tracking-wide mb-4'>Search <span className='text-primary'> Doctors</span></h2>
-      <h2 className='text-grey-400 text-xl'>Search your doctor and book appointment in one click</h2>
-      <div className='flex w-full max-w-sm align-center mt-5'>
+      <h2 className='text-grey-400 text-xl text-center'>Search your doctor and book appointment in one click</h2>
+      <div className='flex w-full max-w-sm align-center flex-col px-4 md:flex-row md:px-0 mt-5'>
         <Input placeholder='Search...' />
-        <button className='ml-2 transition ease-in-out text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 items-center flex justify-center'><SearchIcon className='h-4 w-4 mr-2' />Search </button>
+        <button className='ml-2 transition ease-in-out text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 items-center flex justify-center'><SearchIcon className='h-4 md:w-4 mr-2' />Search </button>
       </div>
 
       {/* Display List of Categories */}
-      <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-5'>
+      <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-5 px-5 md:px-0'>
         {categories.length>0 ? categories.map((data,index) => (
           
           <Link href={'/search/'+data.attributes.Name} key={data.id} className='flex flex-col items-center text-center gap-2 rounded-lg p-5 bg-blue-50 hover:scale-105 transition-all ease-in-out cursor-pointer'>

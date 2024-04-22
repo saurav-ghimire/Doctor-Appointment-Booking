@@ -5,10 +5,10 @@ import Link from "next/link";
 function DoctorList({DoctorList, title}) {
   
   return ( 
-    <div className='mb-10'>
+    <div className='mb-10 px-4 md:px-0'>
       {
         title? <h2 className='font-bold text-4xl tracking-wide mb-4'>{title}</h2> :
-      <h2 className='font-bold text-4xl tracking-wide mb-4'>Popular <span className='text-primary'> Doctors</span></h2>
+      <h2 className='font-bold text-3xl md:text-4xl tracking-wide mb-4'>Popular <span className='text-primary'> Doctors</span></h2>
       }
       
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7'>
