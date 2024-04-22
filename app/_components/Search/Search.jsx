@@ -26,7 +26,7 @@ function Search() {
       <h2 className='text-grey-400 text-xl'>Search your doctor and book appointment in one click</h2>
       <div className='flex w-full max-w-sm align-center mt-5'>
         <Input placeholder='Search...' />
-        <button className='ml-2'><SearchIcon className='h-4 w-4 mr-2' />Search </button>
+        <button className='ml-2 transition ease-in-out text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 items-center flex justify-center'><SearchIcon className='h-4 w-4 mr-2' />Search </button>
       </div>
 
       {/* Display List of Categories */}
