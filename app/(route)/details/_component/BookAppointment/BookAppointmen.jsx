@@ -95,7 +95,7 @@ function BookAppointment({doctorDetails}) {
     <>
       <Dialog>
         <DialogTrigger>
-          <button className='mt-3 rounded-full'>Book Appointment</button>
+          <button className='mt-3 rounded-full transition ease-in-out text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'>Book Appointment</button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
@@ -145,9 +145,6 @@ function BookAppointment({doctorDetails}) {
           <DialogFooter className="sm:justify-start">
             <DialogClose asChild>
               <>
-                <button className='transition ease-in-out text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' type="button" variant="secondary">
-                  Close
-                </button>
                 <button className='transition ease-in-out text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' type="button" disabled={!(date && selectedTime)}
                 onClick={() => saveBooking()}
                 >
