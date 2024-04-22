@@ -18,7 +18,7 @@ function CancleAppointment({onContinueClick}) {
     <>
     <AlertDialog>
     <AlertDialogTrigger>
-    <Button>Cancel Appointment</Button>
+    <button>Cancel Appointment</button>
     </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>

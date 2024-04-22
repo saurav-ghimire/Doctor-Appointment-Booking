@@ -1,5 +1,5 @@
 "use client"
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button"
 import Image from "next/image";
 import Link from "next/link";
 
@@ -50,7 +50,7 @@ function Header() {
 
       }
       {
-        !user ? <LoginLink><Button>Get Started</Button></LoginLink>
+        !user ? <LoginLink><button>Get Started</button></LoginLink>
         : 
           <Popover>
             <PopoverTrigger><Image src={user?.picture} width={50} height={50} alt='User' className='rounded-full' /></PopoverTrigger>
